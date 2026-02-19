@@ -1,0 +1,150 @@
+messages:
+  # ==========================================
+  # ERRORES GENERALES
+  # ==========================================
+  only-players: "<yellow>[⚠] <white>Solo <red>los jugadores <white>pueden usar este comando"
+  player-offline: "<yellow>[⚠] <white>Ese <red>jugador <white>no está conectado"
+  no-selection: "<yellow>[⚠] <white>No has hecho una <red>selección <white>válida"
+  no-active-trap: "<yellow>[⚠] <white>No tienes ninguna jaula trap activa"
+  world-blocked: "<yellow>[⚠] <white>No puedes colocar jaula traps en este mundo"
+  region-not-allowed: "<yellow>[⚠] <white>Esta región no está en la lista de <c:red>regiones autorizadas"
+  region-blocked: "<yellow>[⚠] <white>Esta región está <red>prohibida <white>para colocar jaula traps"
+  blocked-generic: "<yellow>[⚠] <white>No puedes colocar jaula traps aquí"
+  ps-blocked: "<yellow>[⚠] <white>No puedes colocar jaula traps dentro de una zona de <c:red>ProtectionStones"
+  no-worldguard: "<yellow>[⚠] <white>No puedes usar regiones porque <yellow>WorldGuard <c:red>no está instalado"
+  cooldown: "<yellow>[⚠] <white>Debes esperar <red>%time%s <white>antes de usar una jaula trap nuevamente"
+  no-permission: "<red>[❌] <white>No tienes permiso para usar este comando"
+  skin-no-permission: "<red>[❌] <white>No tienes permiso para usar esta skin"
+  command-blocked: "<red>[❌] <white>Este comando está bloqueado dentro de la trampa."
+
+  # ==========================================
+  # ERRORES ESPECÍFICOS DE LAS TRAPS
+  # ==========================================
+  already-active: "<red>[❌] <white>Ya tienes una jaula trap activa. Elimínala antes de colocar otra"
+  no-structure: "<red>[❌] <white>No tienes ninguna estructura activa seleccionada"
+  structure-missing: "<red>[❌] <white>La estructura <yellow>%name% <white>no existe o no está registrada"
+
+  # ==========================================
+  # ÍTEMS Y HERRAMIENTAS
+  # ==========================================
+  item-given: "<green>[✔] <white>Has recibido el <yellow>ítem <white>de activación de jaula trap"
+  tool-given: "<green>[✔] <white>Has recibido la <yellow>herramienta <white>de selección"
+
+  give-received: "<green>[✔] <white>Has recibido <aqua>x%amount% <white>del ítem de jaula trap"
+  give-self: "<green>[✔] <green>Te has dado <yellow>x%amount% <green>del ítem de jaula trap"
+  give-success: "<green>[✔] <white>Has dado <aqua>x%amount% <white>del ítem de jaula trap a <aqua>%player%"
+  give-broadcast: "<green>[✔] <white>Has dado <aqua>x%amount% <white>del ítem de jaula trap a todos los jugadores"
+
+  # ==========================================
+  # ESTRUCTURAS
+  # ==========================================
+  structure-saved: "<green>[✔] <white>La estructura <yellow>%name% <white>ha sido guardada correctamente"
+
+  delete-success: "<red>[❌] <white>La skin <yellow>%skin% <white>ha sido eliminada"
+  delete-not-found: "<red>[❌] <white>La skin <yellow>%skin% <c:red>no existe"
+
+  rename-success: "<green>[✔] <green>La skin <yellow>%old% <white>ha sido renombrada a <yellow>%new%"
+  rename-not-found: "<red>[❌] <white>La skin <yellow>%skin% <c:red>no existe"
+  rename-already-exists: "<red>[❌] <white>Ya existe una skin con el nombre <yellow>%new% <white>"
+
+  # ==========================================
+  # ACCIONES DE LAS TRAPS (Colocar/Quitar)
+  # ==========================================
+  placing: "<white>Has colocado la jaula trap <red>%trap%<green>"
+  removed: "<white>Tu jaula trap <red>%trap% <white>ha sido eliminada"
+
+  # Mensajes de administración (Remove)
+  removed-all: "<red>[❌] <white>Se eliminaron <yellow>%count% <white>jaulas traps activas"
+  removed-all-reset: "<red>[❌] <white>Se eliminaron <yellow>%count% <white>jaulas y se reinició cooldown a <aqua>%reset% <white>jugadores"
+
+  removed-by-admin: "<red>[❌] <white>Se eliminó la jaula trap del jugador <red>%player% <white>"
+  removed-by-admin-reset: "<red>[❌] <white>Se eliminó la jaula y cooldown de <red>%player% <white>"
+
+  admin-remove-notify: "<red>[⚠] <white>Un administrador ha eliminado tu jaula trap activa"
+  admin-remove-reset-notify: "<red>[⚠] <white>Un admin eliminó tu trampa y reinició tu cooldown"
+
+  cooldown-reset-only: "<green>[✔] <white>Se ha reiniciado el cooldown de <aqua>%player%"
+  cooldown-reset-notify: "<green>[✔] <white>Un administrador ha reiniciado tu cooldown de trampa"
+
+  # ==========================================
+  # CONFIGURACIÓN
+  # ==========================================
+  reloaded: "<green>[✔] <green>Configuración y mensajes recargados correctamente"
+  worldguard-disabled: "<yellow>[⚠] <white>El sistema de regiones está <red>deshabilitado<white>. Usando permisos por mundos"
+
+  # ==========================================
+  # USO DE COMANDOS (Ayuda rápida)
+  # ==========================================
+  remove-usage-error: "<red>[⚠] <white>Uso: /trap remove <jugador|me|all> [resetcooldown]"
+  delete-usage-error: "<red>[⚠] <white>Uso: /trap delete <skin>"
+  rename-usage-error: "<red>[⚠] <white>Uso: /trap rename <skin> <nuevoNombre>"
+  give-usage-error: "<red>[⚠] <white>Uso: /trap give <me|jugador|all> <cantidad>"
+  skin-usage-error: "<red>[⚠] <white>Uso: /trap skin <nombre>"
+
+  # ==========================================
+  # MENÚ DE AYUDA (Command Usage)
+  # ==========================================
+  usage-header: "<red>╔════  <bold>Comandos de Jaula FunTraps <reset><red> ════╗"
+  usage-give: "<red>╠ <c:red>/trap give <white>- Dar ítems de activación"
+  usage-tool: "<red>╠ <c:red>/trap tool <white>- Obtener la herramienta de selección"
+  usage-save: "<red>╠ <c:red>/trap save <nombre> <white>- Guardar la estructura seleccionada"
+  usage-delete: "<red>╠ <c:red>/trap delete <skin> <white>- Eliminar una skin de jaula trap"
+  usage-rename: "<red>╠ <c:red>/trap rename <white>- Renombrar una skin de jaula trap"
+  usage-remove: "<red>╠ <c:red>/trap remove <white>- Eliminar jaulas traps activas"
+  usage-reload: "<red>╠ <c:red>/trap reload <white>- Recargar configuración"
+  usage-skin: "<red>╠ <c:red>/trap skin <skin> <white>- Seleccionar una skin de jaula trap"
+  usage-skins: "<red>╠ <c:red>/trap skins <white>- Ver todas las skins disponibles"
+  # Nuevos comandos de economía en ayuda
+  usage-giveuses: "<red>╠ <c:red>/trap giveuses <jugador> <skin> <cant> <white>- Dar usos"
+  usage-takeuses: "<red>╠ <c:red>/trap takeuses <jugador> <skin> <cant> <white>- Quitar usos"
+  usage-setuses: "<red>╠ <c:red>/trap setuses <jugador> <skin> <cant> <white>- Establecer usos"
+  usage-profile: "<red>╠ <c:red>/trap profile [jugador] <white>- Ver perfil y usos"
+
+  # ==========================================
+  # RESTRICCIONES DE BLOQUES
+  # ==========================================
+  trap-break-blocked: "<red>[❌] <white>No puedes romper bloques de la jaula trap"
+  trap-place-blocked: "<red>[❌] <white>No puedes poner bloques dentro de la jaula trap"
+
+  # ==========================================
+  # SKINS (Selección y Lista)
+  # ==========================================
+  skins-header: "<red>╔════ <bold>Skins Disponibles <reset><red>════╗"
+  skins-entry: "<red>╠ <white>- <blue>%skin%"
+  skin-selected: "<green>[✔] <white>Has seleccionado la skin: <yellow>%skin%"
+  skin-not-found: "<red>[❌] <white>La skin <yellow>%skin% <white>no existe"
+
+  # ==========================================
+  # SISTEMA DE USOS Y ECONOMÍA (NUEVO)
+  # ==========================================
+  skin-invalid-default: "<red>[❌] <white>La skin default es infinita y no se puede modificar"
+  amount-invalid: "<red>[⚠] <white>Cantidad inválida. Usa un número o 'unlimited'"
+  amount-must-be-positive: "<red>[⚠] <white>La cantidad debe ser positiva o 'unlimited'"
+
+  # Acciones de administración
+  uses-set-unlimited-sender: "<green>[✔] <white>Has establecido usos <light_purple>ILIMITADOS <white>de <yellow>%skin% <white>a <aqua>%player%"
+  uses-set-unlimited-target: "<green>[✔] <white>Has recibido usos <light_purple>ILIMITADOS <white>para la skin: <yellow>%skin%"
+  uses-added-sender: "<green>[✔] <white>Has añadido <aqua>%amount% <white>usos de <yellow>%skin% <white>a <aqua>%player%"
+  uses-received: "<green>[✔] <white>Has recibido <aqua>%amount% <white>usos para la skin: <yellow>%skin%"
+  uses-removed-sender: "<green>[✔] <white>Has quitado <aqua>%amount% <white>usos de <yellow>%skin% <white>a <aqua>%player%"
+  uses-set-sender: "<green>[✔] <white>Has establecido <aqua>%amount% <white>usos de <yellow>%skin% <white>para <aqua>%player%"
+
+  # Advertencias y Estado
+  uses-warning-zero: "<yellow>[⚠] <white>Cuidado: Tienes <red>0 usos <white>para esta skin. No podrás colocarla"
+  uses-remaining: "<yellow>[ℹ] <white>Usos restantes: <aqua>%uses%"
+  uses-remaining-infinite: "<light_purple>[∞] <white>Usos restantes: <light_purple>Ilimitado"
+  skin-expired: "<red>[❌] <white>Se agotaron tus usos para <yellow>%skin%<white>. Cambiando a default"
+  skin-last-use: "<yellow>[⚠] <white>¡Ese fue tu último uso! La skin ha vuelto a default"
+
+  # ==========================================
+  # PERFIL (/trap profile) - Con corrección de MiniMessage
+  # ==========================================
+  profile-header: "<yellow><st>      </st> <gold> PERFIL DE TRAMPAS <yellow><st>      </st>"
+  profile-player: "<gray>Jugador: <white>%player%"
+  profile-skin: "<gray>Skin Activa: <green>%skin%"
+  profile-inventory-header: "<gold>Inventario de Skins:"
+  profile-default-entry: "<gray> • <white>default: <aqua>∞ <gray>(Infinito)"
+  profile-no-skins: "<gray> • <red>No tienes skins personalizadas"
+  profile-entry-infinite: "<gray> • <white>%skin%: <light_purple>∞ <gray>(Ilimitado)"
+  profile-entry-finite: "<gray> • <white>%skin%: <yellow>%amount% <gray>usos"
+  profile-footer: "<yellow><st>                                     </st>"

@@ -1,0 +1,150 @@
+messages:
+  # ==========================================
+  # GENERAL ERRORS
+  # ==========================================
+  only-players: "<yellow>[⚠] <white>Only <red>players <white>can use this command"
+  player-offline: "<yellow>[⚠] <white>That <red>player <white>is not online"
+  no-selection: "<yellow>[⚠] <white>You haven't made a valid <red>selection"
+  no-active-trap: "<yellow>[⚠] <white>You don't have any active traps"
+  world-blocked: "<yellow>[⚠] <white>You cannot place traps in this world"
+  region-not-allowed: "<yellow>[⚠] <white>This region is not in the <c:red>allowed regions list"
+  region-blocked: "<yellow>[⚠] <white>This region is <red>blocked <white>for placing traps"
+  blocked-generic: "<yellow>[⚠] <white>You cannot place traps here"
+  ps-blocked: "<yellow>[⚠] <white>You cannot place traps inside a <c:red>ProtectionStones zone"
+  no-worldguard: "<yellow>[⚠] <white>Cannot use regions because <yellow>WorldGuard <c:red>is not installed"
+  cooldown: "<yellow>[⚠] <white>You must wait <red>%time%s <white>before using a trap again"
+  no-permission: "<red>[❌] <white>You don't have permission to use this command"
+  skin-no-permission: "<red>[❌] <white>You don't have permission to use this skin"
+  command-blocked: "<red>[❌] <white>This command is blocked inside the trap."
+
+  # ==========================================
+  # TRAP SPECIFIC ERRORS
+  # ==========================================
+  already-active: "<red>[❌] <white>You already have an active trap. Remove it before placing another"
+  no-structure: "<red>[❌] <white>You don't have any active structure selected"
+  structure-missing: "<red>[❌] <white>The structure <yellow>%name% <white>does not exist or is not registered"
+
+  # ==========================================
+  # ITEMS AND TOOLS
+  # ==========================================
+  item-given: "<green>[✔] <white>You received the trap <yellow>activation item"
+  tool-given: "<green>[✔] <white>You received the <yellow>selection tool"
+
+  give-received: "<green>[✔] <white>You received <aqua>x%amount% <white>of the trap item"
+  give-self: "<green>[✔] <green>You gave yourself <yellow>x%amount% <green>of the trap item"
+  give-success: "<green>[✔] <white>Given <aqua>x%amount% <white>of the trap item to <aqua>%player%"
+  give-broadcast: "<green>[✔] <white>Given <aqua>x%amount% <white>of the trap item to all players"
+
+  # ==========================================
+  # STRUCTURES
+  # ==========================================
+  structure-saved: "<green>[✔] <white>Structure <yellow>%name% <white>saved successfully"
+
+  delete-success: "<red>[❌] <white>Skin <yellow>%skin% <white>has been deleted"
+  delete-not-found: "<red>[❌] <white>Skin <yellow>%skin% <c:red>does not exist"
+
+  rename-success: "<green>[✔] <green>Skin <yellow>%old% <white>renamed to <yellow>%new%"
+  rename-not-found: "<red>[❌] <white>Skin <yellow>%skin% <c:red>does not exist"
+  rename-already-exists: "<red>[❌] <white>A skin named <yellow>%new% <white>already exists"
+
+  # ==========================================
+  # TRAP ACTIONS (Place/Remove)
+  # ==========================================
+  placing: "<white>You placed trap <red>%trap%<green>"
+  removed: "<white>Your trap <red>%trap% <white>has been removed"
+
+  # Admin Actions (Remove)
+  removed-all: "<red>[❌] <white>Removed <yellow>%count% <white>active traps"
+  removed-all-reset: "<red>[❌] <white>Removed <yellow>%count% <white>traps and reset cooldown for <aqua>%reset% <white>players"
+
+  removed-by-admin: "<red>[❌] <white>Removed trap owned by <red>%player% <white>"
+  removed-by-admin-reset: "<red>[❌] <white>Removed trap and reset cooldown for <red>%player% <white>"
+
+  admin-remove-notify: "<red>[⚠] <white>An admin has removed your active trap"
+  admin-remove-reset-notify: "<red>[⚠] <white>An admin removed your trap and reset your cooldown"
+
+  cooldown-reset-only: "<green>[✔] <white>Cooldown reset for <aqua>%player%"
+  cooldown-reset-notify: "<green>[✔] <white>An admin has reset your trap cooldown"
+
+  # ==========================================
+  # CONFIGURATION
+  # ==========================================
+  reloaded: "<green>[✔] <green>Configuration and messages reloaded successfully"
+  worldguard-disabled: "<yellow>[⚠] <white>Region system is <red>disabled<white>. Using per-world permissions"
+
+  # ==========================================
+  # COMMAND USAGE (Quick errors)
+  # ==========================================
+  remove-usage-error: "<red>[⚠] <white>Usage: /trap remove <player|me|all> [resetcooldown]"
+  delete-usage-error: "<red>[⚠] <white>Usage: /trap delete <skin>"
+  rename-usage-error: "<red>[⚠] <white>Usage: /trap rename <skin> <newName>"
+  give-usage-error: "<red>[⚠] <white>Usage: /trap give <me|player|all> <amount>"
+  skin-usage-error: "<red>[⚠] <white>Usage: /trap skin <name>"
+
+  # ==========================================
+  # HELP MENU (Command Usage)
+  # ==========================================
+  usage-header: "<red>╔════  <bold>FunTraps Commands <reset><red> ════╗"
+  usage-give: "<red>╠ <c:red>/trap give <white>- Give activation items"
+  usage-tool: "<red>╠ <c:red>/trap tool <white>- Get selection tool"
+  usage-save: "<red>╠ <c:red>/trap save <name> <white>- Save selected structure"
+  usage-delete: "<red>╠ <c:red>/trap delete <skin> <white>- Delete a trap skin"
+  usage-rename: "<red>╠ <c:red>/trap rename <white>- Rename a trap skin"
+  usage-remove: "<red>╠ <c:red>/trap remove <white>- Remove active traps"
+  usage-reload: "<red>╠ <c:red>/trap reload <white>- Reload config"
+  usage-skin: "<red>╠ <c:red>/trap skin <skin> <white>- Select a trap skin"
+  usage-skins: "<red>╠ <c:red>/trap skins <white>- View available skins"
+  # Economy commands
+  usage-giveuses: "<red>╠ <c:red>/trap giveuses <player> <skin> <amt> <white>- Give uses"
+  usage-takeuses: "<red>╠ <c:red>/trap takeuses <player> <skin> <amt> <white>- Take uses"
+  usage-setuses: "<red>╠ <c:red>/trap setuses <player> <skin> <amt> <white>- Set uses"
+  usage-profile: "<red>╠ <c:red>/trap profile [player] <white>- View profile and uses"
+
+  # ==========================================
+  # BLOCK RESTRICTIONS
+  # ==========================================
+  trap-break-blocked: "<red>[❌] <white>You cannot break blocks of the trap"
+  trap-place-blocked: "<red>[❌] <white>You cannot place blocks inside the trap"
+
+  # ==========================================
+  # SKINS (Selection & List)
+  # ==========================================
+  skins-header: "<red>╔════ <bold>Available Skins <reset><red>════╗"
+  skins-entry: "<red>╠ <white>- <blue>%skin%"
+  skin-selected: "<green>[✔] <white>You selected skin: <yellow>%skin%"
+  skin-not-found: "<red>[❌] <white>Skin <yellow>%skin% <white>does not exist"
+
+  # ==========================================
+  # USES & ECONOMY SYSTEM
+  # ==========================================
+  skin-invalid-default: "<red>[❌] <white>Default skin is infinite and cannot be modified"
+  amount-invalid: "<red>[⚠] <white>Invalid amount. Use a number or 'unlimited'"
+  amount-must-be-positive: "<red>[⚠] <white>Amount must be positive or 'unlimited'"
+
+  # Admin Actions
+  uses-set-unlimited-sender: "<green>[✔] <white>Set <light_purple>UNLIMITED <white>uses of <yellow>%skin% <white>for <aqua>%player%"
+  uses-set-unlimited-target: "<green>[✔] <white>You received <light_purple>UNLIMITED <white>uses for skin: <yellow>%skin%"
+  uses-added-sender: "<green>[✔] <white>Added <aqua>%amount% <white>uses of <yellow>%skin% <white>to <aqua>%player%"
+  uses-received: "<green>[✔] <white>You received <aqua>%amount% <white>uses for skin: <yellow>%skin%"
+  uses-removed-sender: "<green>[✔] <white>Removed <aqua>%amount% <white>uses of <yellow>%skin% <white>from <aqua>%player%"
+  uses-set-sender: "<green>[✔] <white>Set <aqua>%amount% <white>uses of <yellow>%skin% <white>for <aqua>%player%"
+
+  # Warnings & Status
+  uses-warning-zero: "<yellow>[⚠] <white>Warning: You have <red>0 uses <white>for this skin. You won't be able to place it"
+  uses-remaining: "<yellow>[ℹ] <white>Uses remaining: <aqua>%uses%"
+  uses-remaining-infinite: "<light_purple>[∞] <white>Uses remaining: <light_purple>Unlimited"
+  skin-expired: "<red>[❌] <white>Uses ran out for <yellow>%skin%<white>. Switching to default"
+  skin-last-use: "<yellow>[⚠] <white>That was your last use! Skin reverted to default"
+
+  # ==========================================
+  # PROFILE (/trap profile)
+  # ==========================================
+  profile-header: "<yellow><st>      </st> <gold> TRAP PROFILE <yellow><st>      </st>"
+  profile-player: "<gray>Player: <white>%player%"
+  profile-skin: "<gray>Active Skin: <green>%skin%"
+  profile-inventory-header: "<gold>Skins Inventory:"
+  profile-default-entry: "<gray> • <white>default: <aqua>∞ <gray>(Infinite)"
+  profile-no-skins: "<gray> • <red>You have no custom skins"
+  profile-entry-infinite: "<gray> • <white>%skin%: <light_purple>∞ <gray>(Unlimited)"
+  profile-entry-finite: "<gray> • <white>%skin%: <yellow>%amount% <gray>uses"
+  profile-footer: "<yellow><st>                                     </st>"

@@ -1,0 +1,222 @@
+# ███████╗██╗░░░██╗███╗░░██╗████████╗██████╗░░█████╗░██████╗░███████╗
+# ██╔════╝██║░░░██║████╗░██║╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔════╝
+# █████╗░░██║░░░██║██╔██╗██║░░░██║░░░██████╔╝███████║██████╔╝███████╗
+# ██╔══╝░░██║░░░██║██║╚████║░░░██║░░░██╔══██╗██╔══██║██╔═══╝░╚════██║
+# ██║░░░░░╚██████╔╝██║░╚███║░░░██║░░░██║░░██║██║░░██║██║░░░░░███████║
+# ╚═╝░░░░░░╚═════╝░╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚══════╝
+#
+# FunTraps — Custom Trap System
+# Author: Keraune | Version: 1.2.0
+# Description: Traps with custom structures, skins, sounds and effects.
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# QUICK CONFIGURATION GUIDE
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 1. SETTINGS
+#    - language: Plugin language (es_es, en_us, ru_ru)
+#    - storage: Data storage type (sqlite or yaml)
+#
+# 2. TRAP
+#    - Global trap settings (duration, cooldown, structure)
+#    - Allowed/blocked worlds and regions
+#    - BossBar configuration and activation item
+#
+# 3. CLEAR-INSIDE
+#    - Controls whether blocks inside the trap are removed
+#    - Can respect WorldGuard and ProtectionStones protections
+#
+# 4. ACTIVATION-ITEM
+#    - Physical item players use to activate traps
+#    - Supports custom name, lore and glow
+#
+# 5. SKINS
+#    - Visual customization, sounds, effects and cooldowns
+#    - {time} placeholder shows remaining trap time
+#    - Sound categories:
+#      master, music, record, weather, block,
+#      hostile, neutral, player, ambient, voice
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ###########################################################
+#                  GENERAL PLUGIN SETTINGS
+# ###########################################################
+
+settings:
+  language: en_us # Plugin language: "es_es", "en_us", "ru_ru"
+  storage: sqlite # Data storage type: sqlite, yaml or mysql
+  auto-save-interval: 10
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: ""
+    useSSL: false
+
+# ###########################################################
+#                    TRAP CONFIGURATION
+# ###########################################################
+
+trap:
+  duration: 15 # Default trap duration (seconds)
+  cooldown: 15 # Default cooldown (seconds)
+  structure: default # Default structure name
+
+  allowed-worlds: # Worlds where traps can be used
+    - world
+    - arena
+
+  blocked-worlds: [] # Worlds where traps CANNOT be used
+
+  allowed-regions: # Regions where traps are allowed
+    - pvp_zone
+    - pvparea
+
+  blocked-regions: [] # Regions where traps CANNOT be used
+
+  allow-in-protections: false # Allow traps inside protections?
+  allow-strangers: false # Allow non-owners to trigger traps?
+
+  blocked-materials: # Blocks that cancel trap placement
+    - BARRIER
+    - BEDROCK
+    - DISPENSER
+
+  clear-inside:
+    enabled: true # Remove blocks inside the trap?
+    respect-protections: true # Respect protections?
+
+    worldguard:
+      blocked-worlds: [] # Worlds blocked for clearing
+      blocked-regions: [] # Regions blocked for clearing
+
+    protectionstones:
+      enabled: true # Allow clearing inside PS protections?
+
+  bossbar:
+    enabled: true # Enable global bossbar?
+    text: "<gradient:#ff0000:#7600FF>⏳ Trap active: {time}s</gradient>" # Bossbar text
+    color: RED # Bar color
+
+  activation-item:
+    material: NETHERITE_SCRAP # Item material
+    name: "&4[☠] ᴊᴀɪʟ ᴛʀᴀᴘꜱ" # Item name
+    glow: false
+    lore:
+      - "&7♦ &fꜱᴋɪʟʟ: &9ɪɴᴅᴇꜱᴛʀᴜᴄᴛɪʙʟᴇ ᴊᴀɪʟ"
+      - "&7♦ &fᴅᴜʀᴀᴛɪᴏɴ: &915 ꜱᴇᴄᴏɴᴅꜱ"
+
+# ###########################################################
+#                        SKINS CONFIG                      #
+# ###########################################################
+
+skins:
+  default:
+    # ================================
+    # BossBar for this skin only
+    # ================================
+    # Use {time} in the text to display the remaining time dynamically.
+    bossbar:
+      enabled: true
+      text: "&5⏳ Trap Active! {time}s"
+      color: PURPLE
+    duration: 15 # Trap duration with this skin (in seconds)
+    cooldown: 15 # Trap cooldown with this skin (in seconds)
+    animation: sphere # Animation type: "sphere", more coming soon...
+
+    # ================================
+    # Item cooldowns inside the trap
+    # ================================
+    item-cooldowns:
+      ENDER_PEARL: 8 # seconds
+      CHORUS_FRUIT: 12
+      ENCHANTED_GOLDEN_APPLE: 30
+      GOLDEN_APPLE: 15
+      TOTEM_OF_UNDYING: 30
+      ELYTRA: 15
+      # You can continue adding more items to the list.
+
+    # ================================
+    # Sounds when placing/removing
+    # ================================
+    sounds:
+      place:
+        - name: minecraft:ui.toast.challenge_complete
+          volume: 1.0
+          pitch: 1.0
+          range: 24
+          category: master
+        - name: minecraft:entity.wither.break_block
+          volume: 1.0
+          pitch: 1.0
+          range: 24
+          category: master
+      remove:
+        - name: minecraft:block.beacon.power_select
+          volume: 1.0
+          pitch: 1.0
+          range: 24
+          category: master
+        - name: minecraft:block.end_portal.spawn
+          volume: 1.0
+          pitch: 1.0
+          range: 24
+          category: master
+    # ───────────────────────────────
+    # Available sound categories:
+    # ───────────────────────────────
+    # master       → Controls all sounds globally.
+    # music        → Background music.
+    # record       → Music discs.
+    # weather      → Rain, thunder, etc.
+    # block        → Block sounds (breaking, placing, doors, pistons...).
+    # hostile      → Hostile mobs (zombies, skeletons, creepers...).
+    # neutral      → Passive mobs (cows, pigs, villagers...).
+    # player       → Player sounds (steps, damage, burping, etc).
+    # ambient      → Ambient sounds (cave sounds, nether ambiance).
+    # voice        → Player voice (reserved for chat systems).
+
+    # ================================
+    # Trap Effects
+    # ================================
+    effects:
+      # Effects applied to the trap owner
+      self:
+        - type: STRENGTH
+          amplifier: 2
+          duration: 10 # seconds
+        - type: GLOWING
+          amplifier: 0
+          duration: -1 # Infinite until the trap ends
+      # Effects applied to trapped enemies
+      enemies:
+        - type: SLOWNESS
+          amplifier: 1
+          duration: 10
+        - type: GLOWING
+          amplifier: 0
+          duration: -1
+# ================================
+# Example of another skin
+# ================================
+# Mastery:
+#   duration: 15
+#   cooldown: 15
+#   item-cooldowns:
+#     ENDER_PEARL: 8
+#     CHORUS_FRUIT: 12
+#   sounds:
+#     place:
+#       - name: minecraft:entity.wither.break_block
+#         volume: 1.0
+#         pitch: 1.0
+#         range: 24
+#         category: master
+#     remove:
+#       - name: minecraft:entity.wither.break_block
+#         volume: 1.0
+#         pitch: 1.0
+#         range: 24
+#         category: master
